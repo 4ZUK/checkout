@@ -45,7 +45,7 @@
                         <span class="input-group-text" id="inputGroup-sizing-default">CPF:</span>
                     </div>
                     <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
+                        aria-describedby="inputGroup-sizing-default" id="cpf">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -92,34 +92,24 @@
             </div>
             <div class="col-sm-4">
                 <header class="bg-dark text-light p-2">
-                    Dados de entrega
+                    Dados de entrega:
                 </header>
                 <form>
                     <div class="form-row">
                         <div class="col-7">
-                            <input type="text" class="form-control" placeholder="Cidade">
+                            <form method="get" action="."></form>
+                            <label>Cep:
+                                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+                                <label>Rua:
+                                <input name="rua" type="text" id="rua" size="60" /></label><br />
+                                <label>Bairro:
+                                <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+                                <label>Cidade:
+                                <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+                                <label>Estado:
+                                <input name="uf" type="text" id="uf" size="2" /></label><br />
+                              </form> 
                         </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Estado">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="CEP">
-                        </div>
-                    </div>
-                    <br>
-                    <form>
-                        <div class="form-row">
-                            <div class="col-4">
-                                <input type="text" class="form-control" placeholder="Bairro">
-                            </div>
-                            <div class="col-2">
-                                <input type="text" class="form-control" placeholder="Numero">
-                            </div>
-                            <div class="col-3">
-                                <input type="text" class="form-control" placeholder="Complemento">
-                            </div>
-                        </div>
-
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="customRadioInline1" name="customRadioInline1"
                                 class="custom-control-input">
@@ -130,7 +120,7 @@
                                 class="custom-control-input">
                             <label class="custom-control-label" for="customRadioInline2">Entrega padrao: R$20,00</label>
                         </div>
-
+                      </form>
             </div>
             </div>
             <div class="col-sm-4">
@@ -175,38 +165,39 @@
                     </div>
                 </form>
 
-                <br><br><button type="button" class="btn btn-primary btn-lg btn-block">COMPRE! COMPRE! COMPRE!! </button>
+                <br><br><button data-toggle="modal" data-target="#compraok" type="button" class="btn btn-primary btn-lg btn-block">COMPRE! COMPRE! COMPRE!! </button data-toggle="modal" data-target="#myModal">
             </div>
         </form>
 
-
-
-
-
-
-
     </main>
 
+    <div id="compraok" class="modal" tabindex="-1" role="dialog">
+        
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Compra Finalizada</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Parabens pela compra!!!.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src = "script/script.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -215,6 +206,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>
